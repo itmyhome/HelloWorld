@@ -35,7 +35,7 @@ public class FirstActivity extends Activity {
 //						Toast.LENGTH_SHORT).show();
 				//销毁一个活动
 //				finish();
-				Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
+				Intent intent = new Intent("com.hello.helloworld.ACTION_START");
 				startActivity(intent);
 			}
 		});
