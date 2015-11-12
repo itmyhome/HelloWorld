@@ -2,6 +2,7 @@ package com.hello.helloworld;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -35,7 +36,9 @@ public class FirstActivity extends Activity {
 //						Toast.LENGTH_SHORT).show();
 				//销毁一个活动
 //				finish();
-				Intent intent = new Intent("com.hello.helloworld.ACTION_START");
+				Intent intent = new Intent(Intent.ACTION_VIEW);
+//				intent.addCategory("com.hello.helloworld.MY_CATEGORY");
+				intent.setData(Uri.parse("http://www.baidu.com"));
 				startActivity(intent);
 			}
 		});
