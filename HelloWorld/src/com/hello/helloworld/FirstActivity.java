@@ -36,10 +36,15 @@ public class FirstActivity extends Activity {
 //						Toast.LENGTH_SHORT).show();
 				//销毁一个活动
 //				finish();
-				Intent intent = new Intent(Intent.ACTION_DIAL);
+//				Intent intent = new Intent(Intent.ACTION_DIAL);
 //				intent.addCategory("com.hello.helloworld.MY_CATEGORY");
-				intent.setData(Uri.parse("tel:10086"));
-				startActivity(intent);
+//				intent.setData(Uri.parse("tel:10086"));
+				String str = "hello second!";
+				int i = 1;
+				Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
+				intent.putExtra("extra_data", str);
+//				intent.putExtra("extra_data", i);
+				startActivityForResult(intent, 1);
 			}
 		});
 	}
@@ -67,6 +72,22 @@ public class FirstActivity extends Activity {
 			break;
 		}
 		return true;
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		
+		switch (requestCode) {
+		case 1:
+			if(requestCode == RESULT_OK){
+				Toast.makeText(FirstActivity.this, data.getStringExtra("data_return"),
+						Toast.LENGTH_SHORT).show();
+			}
+			break;
+
+		default:
+			break;
+		}
 	}
 
 }
