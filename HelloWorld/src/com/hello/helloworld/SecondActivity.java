@@ -1,10 +1,7 @@
 package com.hello.helloworld;
 
 import android.app.Activity;
-import android.content.Intent;
-import android.database.CursorJoiner.Result;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,26 +25,6 @@ public class SecondActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.second_layout);
-		
-		Intent intent = getIntent();
-		Toast.makeText(SecondActivity.this, intent.getStringExtra("extra_data"),
-				Toast.LENGTH_SHORT).show();
-		
-		
-		Button button2 = (Button) findViewById(R.id.button2);
-		
-		
-		button2.setOnClickListener(new OnClickListener(){
-
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent();
-				intent.putExtra("data_return", "i am back");
-				setResult(RESULT_OK, intent);
-				finish();
-			}
-			
-		});
 		
 	}
 
