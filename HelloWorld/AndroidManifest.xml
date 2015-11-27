@@ -27,6 +27,7 @@
             android:label="This is Second activity" >
             <intent-filter>
                 <action android:name="com.hello.helloworld.ACTION_START" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
