@@ -1,10 +1,7 @@
 package com.hello.helloworld;
 
 import android.app.Activity;
-import android.content.Intent;
-import android.database.CursorJoiner.Result;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,33 +18,13 @@ import android.widget.Toast;
  * @date 2015年11月5日 下午10:12:33
  * @version V1.0
  */
-public class SecondActivity extends Activity {
+public class ThirdActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.second_layout);
-		
-		Intent intent = getIntent();
-		Toast.makeText(SecondActivity.this, intent.getStringExtra("extra_data"),
-				Toast.LENGTH_SHORT).show();
-		
-		
-		Button button2 = (Button) findViewById(R.id.button2);
-		
-		
-		button2.setOnClickListener(new OnClickListener(){
-
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent();
-				intent.putExtra("data_return", "i am back");
-				setResult(RESULT_OK, intent);
-				finish();
-			}
-			
-		});
 		
 	}
 
@@ -63,11 +40,11 @@ public class SecondActivity extends Activity {
 
 		switch (item.getItemId()) {
 		case R.id.add_item:
-			Toast.makeText(SecondActivity.this, "you click add_item",
+			Toast.makeText(ThirdActivity.this, "you click add_item",
 					Toast.LENGTH_SHORT).show();
 			break;
 		case R.id.remove_item:
-			Toast.makeText(SecondActivity.this, "you click remove_item",
+			Toast.makeText(ThirdActivity.this, "you click remove_item",
 					Toast.LENGTH_SHORT).show();
 			break;
 		default:
