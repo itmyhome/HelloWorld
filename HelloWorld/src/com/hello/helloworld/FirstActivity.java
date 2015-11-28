@@ -90,5 +90,15 @@ public class FirstActivity extends Activity {
 			break;
 		}
 	}
+	
+	@Override
+	public void onBackPressed() {
+		Intent intent = new Intent();
+		intent.putExtra("data_return", "i am back from firstActivity");
+		setResult(RESULT_OK, intent);
+		finish();
+	}
+	
+	
 
 }
