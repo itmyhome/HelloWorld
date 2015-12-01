@@ -27,4 +27,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="go to SecondActivity" />
+    
+    <Button
+        android:id="@+id/test_bundle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="test bundle" />
 </LinearLayout>

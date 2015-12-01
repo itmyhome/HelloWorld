@@ -3,6 +3,7 @@ package com.hello.helloworld;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -24,6 +25,7 @@ public class SecondActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		Log.d("SecondActivity", "task id is " + getTaskId());
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.second_layout);
 		
@@ -39,10 +41,11 @@ public class SecondActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent();
-				intent.putExtra("data_return", "i am back");
-				setResult(RESULT_OK, intent);
-				finish();
+				Intent intent = new Intent(SecondActivity.this, ThirdActivity.class);
+//				intent.putExtra("data_return", "i am back");
+//				setResult(RESULT_OK, intent);
+//				finish();
+				startActivity(intent);
 			}
 			
 		});

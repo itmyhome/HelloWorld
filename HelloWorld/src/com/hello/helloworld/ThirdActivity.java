@@ -1,7 +1,9 @@
 package com.hello.helloworld;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,9 +25,13 @@ public class ThirdActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		Log.d("ThirdActivity", "task id is " + getTaskId());
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.second_layout);
-		
+		setContentView(R.layout.third_layout);
+//		Intent i = super.getIntent();
+//        Bundle b = i.getExtras();
+//        Toast.makeText(ThirdActivity.this, b.getString("String"),
+//				Toast.LENGTH_SHORT).show();
 	}
 
 	@Override

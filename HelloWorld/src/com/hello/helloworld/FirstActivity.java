@@ -26,6 +26,7 @@ public class FirstActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		Log.d("FirstActivity", "task id is " + getTaskId());
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.first_layout);
 		Button button1 = (Button) findViewById(R.id.button1);

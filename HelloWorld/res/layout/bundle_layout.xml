@@ -6,6 +6,12 @@
     <TextView 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="This is a normal activity"/>
+        android:text="This is a bundle activity"/>
+    
+    <Button
+        android:id="@+id/go_to_third_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="go to ThirdActivity" />
 
 </LinearLayout>

@@ -44,7 +44,7 @@ public class MainActivity extends Activity {
 				startActivity(intent);
 			}
 		});
-        
+        Log.d("MainActivity", this.toString());
         Button firstDialogActivity = (Button) findViewById(R.id.start_first_activity);
         firstDialogActivity.setOnClickListener(new OnClickListener() {
 			
@@ -72,7 +72,27 @@ public class MainActivity extends Activity {
 			}
 		});
         
+        Button bundleActivity = (Button) findViewById(R.id.test_bundle);
         
+        bundleActivity.setOnClickListener(new OnClickListener() {
+        	
+			@Override
+			public void onClick(View v) {
+				next();
+			}
+		});
+        
+        
+    }
+    
+    private void next(){
+    	Intent i = new Intent(MainActivity.this, BundleActivity.class);
+    	Bundle b = new Bundle();
+        b.putInt("int", 1000);
+        b.putString("String", "测试");
+        b.putChar("char", 'c');
+        i.putExtras(b);
+        startActivity(i);
     }
 
     @Override
@@ -136,13 +156,13 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-//	@Override
-//	protected void onSaveInstanceState(Bundle outState) {
-//		// TODO Auto-generated method stub
-//		super.onSaveInstanceState(outState);
-//		String tempData = "something you just typed";
-//		outState.putString("data_key", tempData);
-//	}
+	@Override
+	protected void onSaveInstanceState(Bundle outState) {
+		// TODO Auto-generated method stub
+		super.onSaveInstanceState(outState);
+		String tempData = "something you just typed";
+		outState.putString("data_key", tempData);
+	}
 	
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
