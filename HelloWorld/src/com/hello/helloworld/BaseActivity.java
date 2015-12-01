@@ -17,7 +17,7 @@ public class BaseActivity extends Activity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		Log.d("BaseActivity", "task id is " + getTaskId());
+		Log.d("BaseActivity", getClass().getSimpleName());
 	}
 
 }

@@ -20,7 +20,7 @@ import android.widget.Toast;
  * @date 2015年11月5日 下午10:12:33
  * @version V1.0
  */
-public class ThirdActivity extends Activity {
+public class ThirdActivity extends BaseActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
