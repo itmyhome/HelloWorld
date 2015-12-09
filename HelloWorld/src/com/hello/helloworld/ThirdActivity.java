@@ -28,6 +28,15 @@ public class ThirdActivity extends BaseActivity {
 		Log.d("ThirdActivity", "task id is " + getTaskId());
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.third_layout);
+		Button button3 = (Button) findViewById(R.id.button3);
+		button3.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				ActivityCollector.finishAll();
+				
+			}
+		});
 //		Intent i = super.getIntent();
 //        Bundle b = i.getExtras();
 //        Toast.makeText(ThirdActivity.this, b.getString("String"),
