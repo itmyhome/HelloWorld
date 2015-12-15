@@ -9,12 +9,21 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements OnClickListener{
 
 	public static final String TAG = "MainActivity";
+	
+	private Button button;
+	
+	private EditText editText;
+	
+	private ImageView imageView;
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +35,12 @@ public class MainActivity extends Activity {
         	Toast.makeText(MainActivity.this, tempData,
 					Toast.LENGTH_SHORT).show();
         }
+        Button getEditText = (Button) findViewById(R.id.get_edit_text);
+        
+        imageView = (ImageView) findViewById(R.id.image_view);
+        
+        getEditText.setOnClickListener(this);
+        
         Button startNormalActivity = (Button) findViewById(R.id.start_normal_activity);
         startNormalActivity.setOnClickListener(new OnClickListener() {
 			
@@ -83,6 +98,20 @@ public class MainActivity extends Activity {
 		});
         
         
+    }
+    
+    public void onClick(View v){
+    	switch (v.getId()) {
+		case R.id.get_edit_text:
+			editText = (EditText) findViewById(R.id.edit_view);
+			Toast.makeText(MainActivity.this, editText.getText().toString(),
+					Toast.LENGTH_SHORT).show();
+			imageView.setImageResource(R.drawable.test);
+			break;
+
+		default:
+			break;
+		}
     }
     
     private void next(){
