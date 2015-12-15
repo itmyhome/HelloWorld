@@ -41,12 +41,14 @@ public class FirstActivity extends BaseActivity {
 //				Intent intent = new Intent(Intent.ACTION_DIAL);
 //				intent.addCategory("com.hello.helloworld.MY_CATEGORY");
 //				intent.setData(Uri.parse("tel:10086"));
-				String str = "hello second!";
-				int i = 1;
-				Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
-				intent.putExtra("extra_data", str);
+//				String str = "hello second!";
+//				int i = 1;
+//				Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
+//				intent.putExtra("extra_data", str);
 //				intent.putExtra("extra_data", i);
-				startActivityForResult(intent, 1);
+//				startActivityForResult(intent, 1);
+				
+				SecondActivity.actionStart(FirstActivity.this, "data1", "data2");
 			}
 		});
 	}

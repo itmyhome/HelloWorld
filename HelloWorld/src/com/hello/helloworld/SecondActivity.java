@@ -1,6 +1,6 @@
 package com.hello.helloworld;
 
-import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,7 +30,7 @@ public class SecondActivity extends BaseActivity {
 		setContentView(R.layout.second_layout);
 		
 		Intent intent = getIntent();
-		Toast.makeText(SecondActivity.this, intent.getStringExtra("extra_data"),
+		Toast.makeText(SecondActivity.this, intent.getStringExtra("param1"),
 				Toast.LENGTH_SHORT).show();
 		
 		
@@ -50,6 +50,13 @@ public class SecondActivity extends BaseActivity {
 			
 		});
 		
+	}
+	
+	public static void actionStart(Context context, String data1, String data2){
+		Intent intent = new Intent(context, SecondActivity.class);
+		intent.putExtra("param1", data1);
+		intent.putExtra("param2", data2);
+		context.startActivity(intent);
 	}
 
 	@Override
