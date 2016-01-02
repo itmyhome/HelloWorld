@@ -56,6 +56,12 @@
         android:layout_height="wrap_content"
         android:text="test bundle" />
     
+    <Button
+        android:id="@+id/test_process"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="test_process" />
+    
     <ImageView 
         android:id="@+id/image_view"
         android:layout_width="wrap_content"
@@ -65,5 +71,7 @@
     <ProgressBar 
         android:id="@+id/progress_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:max="100"/>
 </LinearLayout>

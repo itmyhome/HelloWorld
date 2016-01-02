@@ -11,6 +11,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 
@@ -23,6 +24,8 @@ public class MainActivity extends Activity implements OnClickListener{
 	private EditText editText;
 	
 	private ImageView imageView;
+	
+	private ProgressBar progressBar;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +40,11 @@ public class MainActivity extends Activity implements OnClickListener{
         }
         Button getEditText = (Button) findViewById(R.id.get_edit_text);
         
+        button = (Button) findViewById(R.id.test_process);
         imageView = (ImageView) findViewById(R.id.image_view);
-        
+        progressBar = (ProgressBar) findViewById(R.id.progress_bar);
         getEditText.setOnClickListener(this);
+        button.setOnClickListener(this);
         
         Button startNormalActivity = (Button) findViewById(R.id.start_normal_activity);
         startNormalActivity.setOnClickListener(new OnClickListener() {
@@ -108,7 +113,16 @@ public class MainActivity extends Activity implements OnClickListener{
 					Toast.LENGTH_SHORT).show();
 			imageView.setImageResource(R.drawable.test);
 			break;
-
+		case R.id.test_process:
+			int progress = progressBar.getProgress();
+			progress += 10;
+			progressBar.setProgress(progress);
+//			if(progressBar.getVisibility() == View.GONE){
+//				progressBar.setVisibility(View.VISIBLE);
+//			}else{
+//				progressBar.setVisibility(View.GONE);
+//			}
+			break;
 		default:
 			break;
 		}
