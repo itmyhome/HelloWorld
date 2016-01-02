@@ -1,6 +1,5 @@
 package com.hello.helloworld;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,7 +14,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 
-public class MainActivity extends Activity implements OnClickListener{
+public class MainActivity extends BaseActivity implements OnClickListener{
 
 	public static final String TAG = "MainActivity";
 	
