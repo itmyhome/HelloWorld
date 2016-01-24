@@ -14,41 +14,42 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".RelativeActivity"
-            android:launchMode="singleTask"
-            android:label="@string/app_name" >
+            android:name=".FrameActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTask" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
         <activity android:name=".NormalActivity" />
-        
-        <activity android:name=".MainActivity" 
-            android:launchMode="singleTask"
-            android:label="this is firstActivity">
-<!--             <intent-filter> -->
-<!--                 <action android:name="android.intent.action.MAIN" /> -->
+        <activity
+            android:name=".MainActivity"
+            android:label="this is firstActivity"
+            android:launchMode="singleTask" >
 
-<!--                 <category android:name="android.intent.category.LAUNCHER" /> -->
-<!--             </intent-filter> -->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
-        
-        
-        <activity android:name=".FirstActivity" 
-            android:launchMode="singleInstance"
-            />
-        
+        <activity
+            android:name=".FirstActivity"
+            android:launchMode="singleInstance" />
         <activity android:name=".BundleActivity" />
-        
         <activity android:name=".ThirdActivity" />
-        
-       	<activity android:name=".SecondActivity"></activity>
+        <activity android:name=".SecondActivity" >
+        </activity>
         <activity
             android:name=".DialogActivity"
             android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:name=".RelativeActivity"
+            android:label="@string/title_activity_frame" >
         </activity>
     </application>
 
