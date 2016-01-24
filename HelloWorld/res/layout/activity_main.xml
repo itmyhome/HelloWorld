@@ -2,76 +2,95 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
-    
-    <TextView 
-        android:id="@+id/text_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="24sp"
-        android:textColor="#00ff00"
-        android:text="This is TextView" />
+    android:orientation="horizontal" >
     
     <EditText 
-        android:id="@+id/edit_view"
-        android:layout_width="match_parent"
+        android:id="@+id/input_message"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="type something this"
-        android:maxLines="2"/>
+        android:layout_weight="1"
+        android:hint="Type something"
+        />
+    
+<!--     <TextView  -->
+<!--         android:id="@+id/text_view" -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:gravity="center" -->
+<!--         android:textSize="24sp" -->
+<!--         android:textColor="#00ff00" -->
+<!--         android:text="This is TextView" /> -->
+    
+<!--     <EditText  -->
+<!--         android:id="@+id/edit_view" -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:hint="type something this" -->
+<!--         android:maxLines="2"/> -->
+    <Button
+        android:id="@+id/get_progress_dialog"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="top"
+        android:text="圆形进度条" />
     
     <Button
         android:id="@+id/get_edit_text"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Get Edittext" />
+        android:layout_weight="1"
+        android:layout_gravity="center_vertical"
+        android:text="okcancel确认框" />
 
     <Button
         android:id="@+id/start_normal_activity"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Start NormalActivity" />
+        android:layout_weight="1"
+        android:layout_gravity="bottom"
+        android:text="跳转新activity" />
 
-    <Button
-        android:id="@+id/start_dialog_activity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Start DialogActivity" />
+<!--     <Button -->
+<!--         android:id="@+id/start_dialog_activity" -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:text="Start DialogActivity" /> -->
     
-    <Button
-        android:id="@+id/start_first_activity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Start FirstActivity" />
+<!--     <Button -->
+<!--         android:id="@+id/start_first_activity" -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:text="Start FirstActivity" /> -->
     
-    <Button
-        android:id="@+id/go_to_second_activity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="go to SecondActivity" />
+<!--     <Button -->
+<!--         android:id="@+id/go_to_second_activity" -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:text="go to SecondActivity" /> -->
     
-    <Button
-        android:id="@+id/test_bundle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="test bundle" />
+<!--     <Button -->
+<!--         android:id="@+id/test_bundle" -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:text="test bundle" /> -->
     
-    <Button
-        android:id="@+id/test_process"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="test_process" />
+<!--     <Button -->
+<!--         android:id="@+id/test_process" -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:text="test_process" /> -->
     
-    <ImageView 
-        android:id="@+id/image_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_launcher"/>
+<!--     <ImageView  -->
+<!--         android:id="@+id/image_view" -->
+<!--         android:layout_width="wrap_content" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:src="@drawable/ic_launcher"/> -->
     
-    <ProgressBar 
-        android:id="@+id/progress_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:max="100"/>
+<!--     <ProgressBar  -->
+<!--         android:id="@+id/progress_bar" -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         style="?android:attr/progressBarStyleHorizontal" -->
+<!--         android:max="100"/> -->
 </LinearLayout>

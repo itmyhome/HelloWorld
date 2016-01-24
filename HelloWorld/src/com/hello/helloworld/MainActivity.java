@@ -1,5 +1,8 @@
 package com.hello.helloworld;
 
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,6 +23,8 @@ public class MainActivity extends BaseActivity implements OnClickListener{
 	
 	private Button button;
 	
+	private Button progressDialogButton;
+	
 	private EditText editText;
 	
 	private ImageView imageView;
@@ -39,11 +44,13 @@ public class MainActivity extends BaseActivity implements OnClickListener{
         }
         Button getEditText = (Button) findViewById(R.id.get_edit_text);
         
-        button = (Button) findViewById(R.id.test_process);
-        imageView = (ImageView) findViewById(R.id.image_view);
-        progressBar = (ProgressBar) findViewById(R.id.progress_bar);
+//        button = (Button) findViewById(R.id.test_process);
+        progressDialogButton = (Button) findViewById(R.id.get_progress_dialog);
+//        imageView = (ImageView) findViewById(R.id.image_view);
+//        progressBar = (ProgressBar) findViewById(R.id.progress_bar);
         getEditText.setOnClickListener(this);
-        button.setOnClickListener(this);
+//        button.setOnClickListener(this);
+        progressDialogButton.setOnClickListener(this);
         
         Button startNormalActivity = (Button) findViewById(R.id.start_normal_activity);
         startNormalActivity.setOnClickListener(new OnClickListener() {
@@ -54,74 +61,100 @@ public class MainActivity extends BaseActivity implements OnClickListener{
 				startActivity(intent);
 			}
 		});
-        Button startDialogActivity = (Button) findViewById(R.id.start_dialog_activity);
-        startDialogActivity.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(MainActivity.this, DialogActivity.class);
-				startActivity(intent);
-			}
-		});
-        Log.d("MainActivity", this.toString());
-        Button firstDialogActivity = (Button) findViewById(R.id.start_first_activity);
-        firstDialogActivity.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				String str = "go to first activity";
-				Intent intent = new Intent(MainActivity.this, FirstActivity.class);
-				intent.putExtra("extra_data", str);
-				startActivity(intent);
-//				startActivityForResult(intent, 1);
-			}
-			
-		});
+//        Button startDialogActivity = (Button) findViewById(R.id.start_dialog_activity);
+//        startDialogActivity.setOnClickListener(new OnClickListener() {
+//			
+//			@Override
+//			public void onClick(View v) {
+//				Intent intent = new Intent(MainActivity.this, DialogActivity.class);
+//				startActivity(intent);
+//			}
+//		});
+//        Log.d("MainActivity", this.toString());
+//        Button firstDialogActivity = (Button) findViewById(R.id.start_first_activity);
+//        firstDialogActivity.setOnClickListener(new OnClickListener() {
+//			
+//			@Override
+//			public void onClick(View v) {
+//				String str = "go to first activity";
+//				Intent intent = new Intent(MainActivity.this, FirstActivity.class);
+//				intent.putExtra("extra_data", str);
+//				startActivity(intent);
+////				startActivityForResult(intent, 1);
+//			}
+//			
+//		});
         
-        Button secondDialogActivity = (Button) findViewById(R.id.go_to_second_activity);
-        secondDialogActivity.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				String str = "go to second activity";
-				Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-				intent.putExtra("extra_data", str);
-				startActivity(intent);
-//				startActivityForResult(intent, 1);
-			}
-		});
+//        Button secondDialogActivity = (Button) findViewById(R.id.go_to_second_activity);
+//        secondDialogActivity.setOnClickListener(new OnClickListener() {
+//			
+//			@Override
+//			public void onClick(View v) {
+//				String str = "go to second activity";
+//				Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+//				intent.putExtra("extra_data", str);
+//				startActivity(intent);
+////				startActivityForResult(intent, 1);
+//			}
+//		});
         
-        Button bundleActivity = (Button) findViewById(R.id.test_bundle);
-        
-        bundleActivity.setOnClickListener(new OnClickListener() {
-        	
-			@Override
-			public void onClick(View v) {
-				next();
-			}
-		});
+//        Button bundleActivity = (Button) findViewById(R.id.test_bundle);
+//        
+//        bundleActivity.setOnClickListener(new OnClickListener() {
+//        	
+//			@Override
+//			public void onClick(View v) {
+//				next();
+//			}
+//		});
         
         
     }
     
     public void onClick(View v){
     	switch (v.getId()) {
+    	case R.id.get_progress_dialog:
+    		ProgressDialog progressDialog = new ProgressDialog(MainActivity.this);
+    		progressDialog.setTitle("this is a progress dialog");
+    		progressDialog.setMessage("loading");
+    		progressDialog.setCancelable(true);
+    		progressDialog.show();
+    		break;
 		case R.id.get_edit_text:
-			editText = (EditText) findViewById(R.id.edit_view);
-			Toast.makeText(MainActivity.this, editText.getText().toString(),
-					Toast.LENGTH_SHORT).show();
-			imageView.setImageResource(R.drawable.test);
+			AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
+			dialog.setTitle("gagagagaga");
+			dialog.setMessage("gaewqeqeqw");
+			dialog.setCancelable(false);
+			dialog.setPositiveButton("ok", new DialogInterface.OnClickListener() {
+				
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					
+				}
+			});
+			dialog.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+				
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					
+				}
+			});	
+			dialog.show();
+//			editText = (EditText) findViewById(R.id.edit_view);
+//			Toast.makeText(MainActivity.this, editText.getText().toString(),
+//					Toast.LENGTH_SHORT).show();
+//			imageView.setImageResource(R.drawable.test);
 			break;
-		case R.id.test_process:
-			int progress = progressBar.getProgress();
-			progress += 10;
-			progressBar.setProgress(progress);
+//		case R.id.test_process:
+//			int progress = progressBar.getProgress();
+//			progress += 10;
+//			progressBar.setProgress(progress);
 //			if(progressBar.getVisibility() == View.GONE){
 //				progressBar.setVisibility(View.VISIBLE);
 //			}else{
 //				progressBar.setVisibility(View.GONE);
 //			}
-			break;
+//			break;
 		default:
 			break;
 		}
