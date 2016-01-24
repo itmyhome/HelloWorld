@@ -6,5 +6,6 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_relative">RelativeActivity</string>
     <string name="title_activity_frame">FrameActivity</string>
+    <string name="title_activity_table">TableActivity</string>
 
 </resources>

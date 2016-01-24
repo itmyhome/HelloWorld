@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".FrameActivity"
+            android:name=".TableActivity"
             android:label="@string/app_name"
             android:launchMode="singleTask" >
             <intent-filter>
@@ -41,8 +41,8 @@
             android:launchMode="singleInstance" />
         <activity android:name=".BundleActivity" />
         <activity android:name=".ThirdActivity" />
-        <activity android:name=".SecondActivity" >
-        </activity>
+        <activity android:name=".SecondActivity" />
+        <activity android:name=".FrameActivity" />
         <activity
             android:name=".DialogActivity"
             android:theme="@android:style/Theme.Dialog" >
@@ -51,6 +51,7 @@
             android:name=".RelativeActivity"
             android:label="@string/title_activity_frame" >
         </activity>
+       
     </application>
 
 </manifest>
