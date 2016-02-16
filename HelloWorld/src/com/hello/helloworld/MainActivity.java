@@ -51,12 +51,12 @@ public class MainActivity extends BaseActivity implements OnClickListener{
         }
         Button okCancel = (Button) findViewById(R.id.ok_cancel);
         
-//        button = (Button) findViewById(R.id.test_process);
+        button = (Button) findViewById(R.id.test_process);
 //        progressDialogButton = (Button) findViewById(R.id.get_progress_dialog);
 //        imageView = (ImageView) findViewById(R.id.image_view);
         progressBar = (ProgressBar) findViewById(R.id.progress_bar);
         okCancel.setOnClickListener(this);
-//        button.setOnClickListener(this);
+        button.setOnClickListener(this);
 //        progressDialogButton.setOnClickListener(this);
         
 //        Button startNormalActivity = (Button) findViewById(R.id.start_normal_activity);
