@@ -1,5 +1,11 @@
 package com.hello.helloworld;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.hello.helloworld.msg.Msg;
+import com.hello.helloworld.msg.MsgAdapter;
+
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -13,6 +19,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -42,85 +49,119 @@ public class MainActivity extends BaseActivity implements OnClickListener{
         	Toast.makeText(MainActivity.this, tempData,
 					Toast.LENGTH_SHORT).show();
         }
-        Button getEditText = (Button) findViewById(R.id.get_edit_text);
+        Button okCancel = (Button) findViewById(R.id.ok_cancel);
         
 //        button = (Button) findViewById(R.id.test_process);
-        progressDialogButton = (Button) findViewById(R.id.get_progress_dialog);
+//        progressDialogButton = (Button) findViewById(R.id.get_progress_dialog);
 //        imageView = (ImageView) findViewById(R.id.image_view);
-//        progressBar = (ProgressBar) findViewById(R.id.progress_bar);
-        getEditText.setOnClickListener(this);
+        progressBar = (ProgressBar) findViewById(R.id.progress_bar);
+        okCancel.setOnClickListener(this);
 //        button.setOnClickListener(this);
-        progressDialogButton.setOnClickListener(this);
+//        progressDialogButton.setOnClickListener(this);
         
-        Button startNormalActivity = (Button) findViewById(R.id.start_normal_activity);
-        startNormalActivity.setOnClickListener(new OnClickListener() {
+//        Button startNormalActivity = (Button) findViewById(R.id.start_normal_activity);
+//        startNormalActivity.setOnClickListener(new OnClickListener() {
+//			
+//			@Override
+//			public void onClick(View v) {
+//				Intent intent = new Intent(MainActivity.this, NormalActivity.class);
+//				startActivity(intent);
+//			}
+//		});
+        Button startDialogActivity = (Button) findViewById(R.id.start_dialog_activity);
+        startDialogActivity.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(MainActivity.this, NormalActivity.class);
+				Intent intent = new Intent(MainActivity.this, DialogActivity.class);
 				startActivity(intent);
 			}
 		});
-//        Button startDialogActivity = (Button) findViewById(R.id.start_dialog_activity);
-//        startDialogActivity.setOnClickListener(new OnClickListener() {
-//			
-//			@Override
-//			public void onClick(View v) {
-//				Intent intent = new Intent(MainActivity.this, DialogActivity.class);
-//				startActivity(intent);
-//			}
-//		});
 //        Log.d("MainActivity", this.toString());
-//        Button firstDialogActivity = (Button) findViewById(R.id.start_first_activity);
-//        firstDialogActivity.setOnClickListener(new OnClickListener() {
-//			
-//			@Override
-//			public void onClick(View v) {
-//				String str = "go to first activity";
-//				Intent intent = new Intent(MainActivity.this, FirstActivity.class);
-//				intent.putExtra("extra_data", str);
-//				startActivity(intent);
-////				startActivityForResult(intent, 1);
-//			}
-//			
-//		});
+        Button firstDialogActivity = (Button) findViewById(R.id.start_first_activity);
+        firstDialogActivity.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				String str = "go to first activity";
+				Intent intent = new Intent(MainActivity.this, FirstActivity.class);
+				intent.putExtra("extra_data", str);
+				startActivity(intent);
+//				startActivityForResult(intent, 1);
+			}
+			
+		});
         
-//        Button secondDialogActivity = (Button) findViewById(R.id.go_to_second_activity);
-//        secondDialogActivity.setOnClickListener(new OnClickListener() {
-//			
-//			@Override
-//			public void onClick(View v) {
-//				String str = "go to second activity";
-//				Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-//				intent.putExtra("extra_data", str);
-//				startActivity(intent);
-////				startActivityForResult(intent, 1);
-//			}
-//		});
+        Button secondDialogActivity = (Button) findViewById(R.id.go_to_second_activity);
+        secondDialogActivity.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				String str = "go to second activity";
+				Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+				intent.putExtra("extra_data", str);
+				startActivity(intent);
+//				startActivityForResult(intent, 1);
+			}
+		});
         
-//        Button bundleActivity = (Button) findViewById(R.id.test_bundle);
-//        
-//        bundleActivity.setOnClickListener(new OnClickListener() {
-//        	
-//			@Override
-//			public void onClick(View v) {
-//				next();
-//			}
-//		});
+        Button bundleActivity = (Button) findViewById(R.id.test_bundle);
         
+        bundleActivity.setOnClickListener(new OnClickListener() {
+        	
+			@Override
+			public void onClick(View v) {
+				next();
+			}
+		});
+        
+        Button showListViewButton = (Button) findViewById(R.id.show_list_view);
+        
+        showListViewButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+				startActivity(intent);
+//				startActivityForResult(intent, 1);
+			}
+		});
+        
+        Button showTitleLayOutButton = (Button) findViewById(R.id.show_title_lay_out);
+        
+        showTitleLayOutButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(MainActivity.this, TitleActivity.class);
+				startActivity(intent);
+			}
+		});
+        
+        
+        Button goToMsgListViewButton = (Button) findViewById(R.id.go_to_msg_list_view);
+        
+        goToMsgListViewButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(MainActivity.this, MsgActivity.class);
+				startActivity(intent);
+			}
+		});
         
     }
     
     public void onClick(View v){
     	switch (v.getId()) {
-    	case R.id.get_progress_dialog:
-    		ProgressDialog progressDialog = new ProgressDialog(MainActivity.this);
-    		progressDialog.setTitle("this is a progress dialog");
-    		progressDialog.setMessage("loading");
-    		progressDialog.setCancelable(true);
-    		progressDialog.show();
-    		break;
-		case R.id.get_edit_text:
+//    	case R.id.get_progress_dialog:
+//    		ProgressDialog progressDialog = new ProgressDialog(MainActivity.this);
+//    		progressDialog.setTitle("this is a progress dialog");
+//    		progressDialog.setMessage("loading");
+//    		progressDialog.setCancelable(true);
+//    		progressDialog.show();
+//    		break;
+		case R.id.ok_cancel:
 			AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
 			dialog.setTitle("gagagagaga");
 			dialog.setMessage("gaewqeqeqw");
@@ -145,16 +186,16 @@ public class MainActivity extends BaseActivity implements OnClickListener{
 //					Toast.LENGTH_SHORT).show();
 //			imageView.setImageResource(R.drawable.test);
 			break;
-//		case R.id.test_process:
-//			int progress = progressBar.getProgress();
-//			progress += 10;
-//			progressBar.setProgress(progress);
-//			if(progressBar.getVisibility() == View.GONE){
-//				progressBar.setVisibility(View.VISIBLE);
-//			}else{
-//				progressBar.setVisibility(View.GONE);
-//			}
-//			break;
+		case R.id.test_process:
+			int progress = progressBar.getProgress();
+			progress += 10;
+			progressBar.setProgress(progress);
+			if(progressBar.getVisibility() == View.GONE){
+				progressBar.setVisibility(View.VISIBLE);
+			}else{
+				progressBar.setVisibility(View.GONE);
+			}
+			break;
 		default:
 			break;
 		}
