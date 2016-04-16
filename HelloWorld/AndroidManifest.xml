@@ -7,6 +7,9 @@
     <uses-sdk
         android:minSdkVersion="15"
         android:targetSdkVersion="21" />
+    
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="true"
@@ -46,6 +49,8 @@
         <activity android:name=".TableActivity" />
         <activity android:name=".TitleActivity" />
         <activity android:name=".MsgActivity" />
+        <activity android:name=".BroadcastTest" />
+        <activity android:name=".BootCompleteReceiver" />
         <activity
             android:name=".DialogActivity"
             android:theme="@android:style/Theme.Dialog" >
@@ -54,7 +59,11 @@
             android:name=".RelativeActivity"
             android:label="@string/title_activity_frame" >
         </activity>
-       
+       <receiver android:name=".BootCompleteReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

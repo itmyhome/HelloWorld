@@ -97,6 +97,12 @@
         android:layout_height="wrap_content"
         android:text="go_to_msg_list_view" />
     
+    <Button
+        android:id="@+id/go_to_broad_cast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="go_to_broad_cast" />
+    
     <ImageView 
         android:id="@+id/image_view"
         android:layout_width="wrap_content"

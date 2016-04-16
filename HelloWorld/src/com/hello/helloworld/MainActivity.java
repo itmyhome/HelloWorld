@@ -150,6 +150,17 @@ public class MainActivity extends BaseActivity implements OnClickListener{
 			}
 		});
         
+        Button goToBroadCastButton = (Button) findViewById(R.id.go_to_broad_cast);
+        
+        goToBroadCastButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(MainActivity.this, BroadcastTest.class);
+				startActivity(intent);
+			}
+		});
+        
     }
     
     public void onClick(View v){
